@@ -9,3 +9,91 @@
 a {
     text-decoration: none;
 }
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #141414;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 1000px;
+    height: 150px;
+}
+
+.face {
+    position: absolute;
+
+    width: 500px;
+    height: 150px;
+
+    font-size: 6em;
+    line-height: 150px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+.face span {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    transition: 0.5s ease;
+}
+
+.face.face1 {
+    left: 0;
+
+    background: #d80045;
+    color: #fff;
+
+    transform: perspective(800px) rotateY(-64deg);
+    transform-origin: left;
+}
+
+.face.face1 span {
+    animation: anim1 10s linear infinite;
+}
+
+@keyframes anim1 {
+    0% {
+        left: 200%;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.face.face2 {
+    right: 0;
+
+    background: #d80045;
+    color: #fff;
+
+    transform: perspective(800px) rotateY(64deg);
+    transform-origin: right;
+}
+
+.face.face2 span {
+    animation: anim2 10s linear infinite;
+}
+
+@keyframes anim2 {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -200%;
+    }
+}
